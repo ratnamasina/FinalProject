@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'css/phoneCompare.css' %} ">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>Choose Which Brand You Want To Compare</h1>
+<a href="{% url 'iphone'%}">
+<div class="container">
+
+  <img src="{% static 'images/iPhone.jpg' %}"alt="Avatar" class="image">
+
+  <div class="overlay">
+    <div class="text">Compare iPhone</div>
+  </div>
+</div>
+    </a>
+<a href="{% url 'Samsung'%}">
+<div class="container1">
+
+  <img src="{% static 'images/samsung.jpg' %}"alt="Avatar" class="image">
+
+  <div class="overlay">
+    <div class="text">Compare Samsung</div>
+  </div>
+</div>
+</a>
+</body>
+</html>

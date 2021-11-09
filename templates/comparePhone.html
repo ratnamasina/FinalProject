@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'css/phoneCompare.css' %} ">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h2> Welcome {{ k.first_name }}{{ k.last_name }}</h2>
+<h1>Compare and find your perfect mobile</h1>
+
+<a href="{% url 'iphone'%}">
+<div class="iphone">
+<img src="{%  static 'images/compareiphone.jpg' %}">
+</div>
+</a>
+<a href="{% url 'samsung'%}">
+<div class="samsung">
+<img src="{% static 'images/comparesamsung.jpg' %}">
+</div>
+</a>
+</body>
+</html>

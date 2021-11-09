@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% load cart_tag %}
+<html lang="en">
+Total Length :: {{request.session.cart|length}}
+
+Cart Detail:
+
+{% for key,value in request.session.cart.items %}
+{{value.name}} {{value.price}} {{value.quantity}} {{value.image}} Total {{ value.price|multiply:value.quantity }}
+
+{% endfor %}
+
+</html>
+
+
+

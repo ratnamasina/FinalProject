@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'css/applewatch.css' %}">
+<script src="{% static 'js/iphone.js'%}"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>Choose Which Apple Watch Model You Want To Compare</h1>
+<form method="POST" action="{% url 'applewatchoutput' %}" id="iphoneform">
+{% csrf_token %}
+<select class="device9" id="device9" name="device9" required>
+  <option value="" selected="selected">Choose a device</option>
+    {% for m1 in w_m1 %}
+        <option value="{{ m1.watch_model_name }}" id="value1" >
+          {{ m1.watch_model_name }}
+        </option>
+      {% endfor %}
+  </select>
+{% csrf_token %}
+<select class="device10" id="device10" name="device10" required>
+  <option value="" selected="selected">Choose a device</option>
+    {% for m2 in w_m2 %}
+        <option value="{{ m2.watch_model_name}}" id="value2">
+          {{ m2.watch_model_name}}
+        </option>
+      {% endfor %}
+  </select>
+<div class="phone1">
+<img src="{% static 'images/watch.jpg' %}">
+</div>
+<div class="phone2">
+<img src="{% static 'images/watch.jpg' %}">
+    <input type="submit" class="bu" value="COMPARE">
+</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'css/samsungtab.css' %}">
+<script src="{% static 'js/iphone.js'%}"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>Choose Which Samsung Tab Model You Want To Compare</h1>
+<form method="POST" action="{% url 'samsungtaboutput' %}" id="iphoneform">
+{% csrf_token %}
+<select class="device7" id="device7" name="device7" required>
+  <option value="" selected="selected">Choose a device</option>
+    {% for m1 in t_m1 %}
+        <option value="{{ m1.tab_model_name }}" id="value1" >
+          {{ m1.tab_model_name }}
+        </option>
+      {% endfor %}
+  </select>
+{% csrf_token %}
+<select class="device8" id="device8" name="device8" required>
+  <option value="" selected="selected">Choose a device</option>
+    {% for m2 in t_m2 %}
+        <option value="{{ m2.tab_model_name }}" id="value2">
+          {{ m2.tab_model_name }}
+        </option>
+      {% endfor %}
+  </select>
+<div class="phone1">
+<img src="{% static 'images/tabimage.png' %}">
+</div>
+<div class="phone2">
+<img src="{% static 'images/tabimage.png' %}">
+    <input type="submit" class="bu" value="COMPARE">
+</div>
+</form>
+</body>
+</html>

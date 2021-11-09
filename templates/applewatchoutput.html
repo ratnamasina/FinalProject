@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'css/applewatchoutput.css' %}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>Choose The Best Apple Watch with the Best Features</h1>
+<div class="pos">
+<div class="box">
+    <div class="feature">
+<p style="font-size:20px"><b>Features</b></p>
+
+{% for f in w_f %}
+<p>
+  {{ f.watch_feature_name }}
+
+</p>
+{% endfor %}
+</div>
+
+<div class="feature1">
+<label>
+<p style="font-size:20px" id="p1" title="p1">{{data9}}</p>
+</label>
+    {% for fi in w_fv1 %}
+    <p>
+        {{ fi.watch_feature_v_value }}
+    </p>
+    {% endfor %}
+</div>
+<div class="feature2">
+<p style="font-size:20px" id="p2" title="p2">{{data10}}</p>
+
+     {% for fi2 in w_fv2 %}
+    <p>
+        {{ fi2.watch_feature_v_value }}
+    </p>
+    {% endfor %}
+</div>
+<form method="post" action="{% url 'watchbuy' %}">
+    {% csrf_token %}
+<input type="submit" value="{{ data9 }}" id="buy1" name="buy1" style="position:absolute;top:480px;left:500px;">
+
+<input type="submit" value="{{ data10 }}" id="buy2" name="buy1" style="position:absolute;top:480px;left:850px;">
+    </form>
+</div>
+</div>
+</body>
+</html>

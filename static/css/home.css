@@ -1,0 +1,46 @@
+.back{
+  position: absolute;
+  top: 100px;
+  left:740px;
+  width: 650px;
+  height:450px;
+}
+h1 {
+  font-size:30px;
+  position: absolute;
+  top:230px;
+  left:10px;
+  color:DarkBlue;
+  font-family: verdana;
+
+}
+h2 {
+  font-size: 20px;
+  position: absolute;
+  top:330px;
+  left:10px;
+  font-family: verdana;
+
+}
+h3{
+ font-size: 20px;
+}
+a:link, a:visited {
+  font-size: 20px;
+  background-color: DarkBlue;
+  color: white;
+  border:darkblue;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 12px;
+  font-family: verdana;
+}
+
+a:hover, a:active {
+  background-color: black;
+  color: white;
+  font-family: verdana;
+
+}

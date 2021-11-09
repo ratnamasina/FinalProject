@@ -1,0 +1,74 @@
+img{
+    position:absolute;
+    top:190px;
+    left:290px;
+
+}
+
+h1 {
+  font-size: 30px;
+  position:absolute;
+  left:450px;
+  top:40px;
+  color:DarkBlue;
+  font-family: verdana;
+}
+h2{
+  font-size: 30px;
+  position:absolute;
+  left:260px;
+  top:120px;
+  color:DarkBlue;
+  font-family: verdana;
+}
+.feature{
+  position:absolute;
+  top:50px;
+  left:100px;
+  font-size: 17px;
+  color:DarkBlue;
+  font-family: verdana;
+}
+.feature1{
+  position:absolute;
+  left:400px;
+  top:50px;
+  font-size: 17px;
+  color:DarkBlue;
+  font-family: verdana;
+}
+.pos{
+  position:absolute;
+  top:20px;
+  left:600px;
+}
+.box{
+  background-color: white;
+  position:absolute;
+  top:50px;
+  width: 600px;
+  height:400px;
+  border: 15px;
+  padding: 50px;
+  margin: 20px;
+
+}
+input[type=submit] {
+  background-color: DarkBlue;
+  font-size: 15px;
+  font-family: Verdana;
+  color: white;
+  padding: 12px 60px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+input[type=submit]:hover {
+  background-color: black;
+}
+.bpos1{
+  position:absolute;
+  left:-250px;
+  top:20px;
+}

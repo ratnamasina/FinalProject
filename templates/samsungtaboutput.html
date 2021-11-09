@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'css/samsungtaboutput.css' %}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>Choose The Best Samsung Tab with the Best Features</h1>
+<div class="pos">
+<div class="box">
+    <div class="feature">
+<p style="font-size:20px"><b>Features</b></p>
+
+{% for f in t_f %}
+<p>
+  {{ f.tab_feature_name }}
+
+</p>
+{% endfor %}
+</div>
+
+<div class="feature1">
+<label>
+<p style="font-size:20px" id="p1" title="p1">{{data7}}</p>
+</label>
+    {% for fi in t_fv1 %}
+    <p>
+        {{ fi.tab_feature_v_value }}
+    </p>
+    {% endfor %}
+</div>
+<div class="feature2">
+<p style="font-size:20px" id="p2" title="p2">{{data8}}</p>
+
+     {% for fi2 in t_fv2 %}
+    <p>
+        {{ fi2.tab_feature_v_value }}
+    </p>
+    {% endfor %}
+</div>
+<form method="post" action="{% url 'tabbuy' %}">
+    {% csrf_token %}
+<input type="submit" value="{{ data7 }}" id="buy1" name="buy1" style="position:absolute;top:480px;left:500px;">
+
+<input type="submit" value="{{ data8 }}" id="buy2" name="buy1" style="position:absolute;top:480px;left:850px;">
+    </form>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+   <link rel="stylesheet" href="{% static 'css/login.css'%}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<form id="form2" action="" method="POST">
+  <div class="imgcontainer">
+    <img src="{% static 'images/login.png' %}" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+      {% csrf_token %}
+      {% for message in messages %}
+
+                    <div class="alert alert-success">
+                        <a class="close" href="#" data-dismiss="alert">×</a>
+
+                        {{ message }}
+
+                    </div>
+            {% endfor %}
+      <label for="email_id"><b>Email Id</b></label>
+      <input type="email" required id="email_id" name="email_id" placeholder="Your email id..">
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" required id="password" name="password" placeholder="">
+    <button type="submit" value="Login">Login</button>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <span class="psw"><a href="{% url 'register' %}">Register</a></span>
+  </div>
+</form>
+</body>
+</html>

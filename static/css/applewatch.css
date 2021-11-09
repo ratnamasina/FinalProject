@@ -1,0 +1,60 @@
+h1 {
+  font-size: 30px;
+  position:absolute;
+  left:250px;
+  top:40px;
+  color:DarkBlue;
+  font-family: verdana;
+}
+.device9 {
+  position:absolute;
+  font-size:20px;
+  font-family: verdana;
+  top:150px;
+  left:100px;
+  width: 30%;
+  padding: 15px 20px;
+  border: black;
+  border-radius: 4px;
+  background-color: #c7c7c7;
+}
+.device10 {
+  position:absolute;
+  font-size:20px;
+  font-family: verdana;
+  top:150px;
+  left:850px;
+  width: 30%;
+  padding: 15px 20px;
+  border: black;
+  border-radius: 4px;
+  background-color: #c7c7c7;
+}
+.phone1{
+position:absolute;
+top:250px;
+left:200px;
+}
+.phone2{
+position:absolute;
+top:250px;
+left:920px;
+}
+.bu{
+  background-color: Black;
+  height:auto;
+  width:80%;
+  font-size:16px;
+  position:absolute;
+  top:250px;
+  left:-320px;
+  color: white;
+  padding: 16px 16px;
+  text-decoration: none;
+  margin: 2px 2px;
+  cursor: pointer;
+  border-radius: 18px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  font-family: verdana;
+}

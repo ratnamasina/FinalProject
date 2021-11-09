@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'css/home.css'%}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<img src="{% static 'images/homepagepic.png' %}" class="back">
+<h1>Compare and Choose Your Best <br>Smart Device</h1>
+<h2>Find your perfect device across some of the biggest brands </h2>
+<a href="{% url 'login'%}" target="_blank" style="position: absolute;top:410px;left:10px;">Sign In</a>
+<a href="{% url 'register'%}" target="_blank" style="position: absolute;top:410px;left:170px;">Sign Up</a>
+</body>
+</html>

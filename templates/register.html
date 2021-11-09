@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'css/register.css'%}">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+<body>
+<img src="{% static 'images/login.png' %}" >
+<div id="register">
+
+<div class="container">
+  <form id="form1" action="" method="POST">
+      {% csrf_token %}
+
+  <div class="row">
+    <div class="col-25">
+
+      <label for="first_name">First Name</label>
+    </div>
+    <div class="col-75">
+      <input type="text" required id="first_name" name="first_name" placeholder="Your name..">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="last_name">Last Name</label>
+    </div>
+    <div class="col-75">
+      <input type="text" required id="last_name" name="last_name" placeholder="Your last name..">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="email_id">Email Id</label>
+    </div>
+    <div class="col-75">
+       <input type="email" required id="email_id" name="email_id" placeholder="Your email id..">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="password">Password</label>
+    </div>
+    <div class="col-75">
+       <input type="password" required id="password" name="password" placeholder="">
+    </div>
+  </div>
+        {% for message in messages %}
+
+                    <div class="alert alert-success">
+                        <a  href="{% url 'login' %}" ><strong>Login here</strong></a>
+
+                        {{ message }}
+
+                    </div>
+            {% endfor %}
+  <div class="row">
+    <input type="submit" value="Submit">
+
+  </div>
+  </form>
+</div>
+</div>
+
+
+</body>
+</html>

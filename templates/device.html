@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'css/device.css'%}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>Choose Which Device You Want To Compare</h1>
+<a href="{% url 'phoneCompare'%}">
+<div class="container">
+
+  <img src="{% static 'images/2ndpagphone.png' %}"alt="Avatar" class="image">
+
+  <div class="overlay">
+    <div class="text">Compare Smart Phone</div>
+  </div>
+</div>
+</a>
+<a href="{% url 'tabCompare'%}">
+<div class="container1">
+
+  <img src="{% static 'images/2ndpagetab.jpg' %}"alt="Avatar" class="image">
+
+  <div class="overlay">
+    <div class="text">Compare Smart Tab</div>
+  </div>
+</div>
+    </a>
+<a href="{% url 'watchCompare'%}">
+<div class="container2">
+
+  <img src="{% static 'images/2ndpagewatch.jpg' %}"alt="Avatar" class="image">
+
+  <div class="overlay">
+    <div class="text">Compare Smart Watch</div>
+  </div>
+</div>
+    </a>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'css/samsungoutput.css' %}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>Choose The Best Samsung Phone with the Best Features</h1>
+<div class="pos">
+<div class="box">
+    <div class="feature">
+<p style="font-size:20px"><b>Features</b></p>
+
+{% for f in p_f %}
+<p>
+  {{ f.phone_feature_name }}
+
+</p>
+{% endfor %}
+</div>
+
+<div class="feature1">
+<label>
+<p style="font-size:20px" id="p1" title="p1">{{data3}}</p>
+</label>
+    {% for fi in p_fv1 %}
+    <p>
+        {{ fi.phone_feature_v_value }}
+    </p>
+    {% endfor %}
+</div>
+<div class="feature2">
+<p style="font-size:20px" id="p2" title="p2">{{data4}}</p>
+
+     {% for fi2 in p_fv2 %}
+    <p>
+        {{ fi2.phone_feature_v_value }}
+    </p>
+    {% endfor %}
+</div>
+<form method="post" action="{% url 'phonebuy' %}">
+    {% csrf_token %}
+<input type="submit" value="{{ data3 }}" id="buy1" name="buy1" style="position:absolute;top:480px;left:500px;">
+
+<input type="submit" value="{{ data4 }}" id="buy2" name="buy1" style="position:absolute;top:480px;left:850px;">
+    </form>
+</div>
+</div>
+</body>
+</html>

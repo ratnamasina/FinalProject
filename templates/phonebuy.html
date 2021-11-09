@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'css/phonebuy.css'%}">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+{% for img in pmi1 %}
+    <img src = "{{img.phone_Img.url}}" alt="img" style="width:280px;height: 450px;"/>
+{% endfor %}
+   <h1>Buy Your Perfect Smart Phone</h1>
+<h2>{{data}}</h2>
+<div class="pos">
+<div class="box">
+    <div class="feature">
+
+{% for f in pf %}
+<p>
+  {{ f.phone_feature_name }}
+
+</p>
+{% endfor %}
+</div>
+
+<div class="feature1">
+
+    {% for fv in pfv1 %}
+    <p>
+        {{ fv.phone_feature_v_value }}
+    </p>
+    {% endfor %}
+
+</div>
+
+<form method="post" action="{% url 'phonePayment' %}">
+    {% csrf_token %}
+
+<div class="bpos1">
+      <input type="hidden" id="buy3" name="buy3" value="{{ data }}">
+<input type="submit" value="Buy {{ data }}" id="buy1" name="buy1" style="position:absolute;top:480px;left:500px;">
+    </div>
+    </form>
+
+</div>
+</div>
+</body>
+</html>
