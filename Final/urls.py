@@ -27,13 +27,13 @@ urlpatterns = [
     path('phonebuy/', views.phonebuy, name='phonebuy'),
     path('tabbuy/', views.tabbuy, name='tabbuy'),
     path('watchbuy/', views.watchbuy, name='watchbuy'),
-    path('phonePayment/', views.phonePayment, name='phonePayment'),
     path('watchCompare/', views.watchCompare, name='watchCompare'),
     path('applewatch/', views.applewatch, name='applewatch'),
     path('applewatchoutput/', views.applewatchoutput, name='applewatchoutput'),
     path('samsungwatch/', views.samsungwatch, name='samsungwatch'),
     path('samsungwatchoutput/', views.samsungwatchoutput, name='samsungwatchoutput'),
-    path('shipment/', views.shipment, name='shipment'),
-    path('thankyou/', views.thankyou, name='thankyou'),
+    path('amazonphone/',views.amazonphone,name='amazonphone'),
+    path('amazontab/',views.amazontab,name='amazontab'),
+    path('amazonwatch/',views.amazonwatch,name='amazonwatch'),
 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

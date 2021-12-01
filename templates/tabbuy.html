@@ -36,12 +36,12 @@
 
 </div>
 
-<form method="post" action="{% url 'phonePayment' %}">
+<form method="post" action="{% url 'amazontab' %}">
     {% csrf_token %}
 
 <div class="bpos1">
-      <input type="hidden" id="buy3" name="buy3" value="{{ data }}">
-<input type="submit" value="Buy {{ data }}" id="buy1" name="buy1" style="position:absolute;top:480px;left:500px;">
+      <input type="hidden" id="buy14" name="buy14" value="{{ data }}">
+<input type="submit" value="Buy {{ data }}" id="buy1" name="buy1" style="position:absolute;top:500px;left:500px;">
     </div>
     </form>
 

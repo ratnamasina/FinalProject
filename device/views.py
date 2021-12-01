@@ -1,14 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.template import RequestContext
 from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from django.views.decorators.csrf import requires_csrf_token
 from django.contrib import messages
-from django.http import HttpResponse
 from device.models import user, phone_brand, phone_modell, phone_feature, phone_feature_v, tab_brand, tab_modell, \
     tab_feature, tab_feature_v, watch_brand, watch_modell, watch_feature, watch_feature_v
-from django.conf import settings
-from django.contrib.auth.decorators import login_required
-import pymysql
+import requests
+from django.http import HttpResponse
 
 
 @csrf_exempt
@@ -419,27 +416,49 @@ def watchbuy(request):
             return render(request, "phonePayment.html")
 
 
-def phonePayment(request):
-    if request.method == "POST":
-        data = request.GET.get("buy3")
-        pm = phone_modell.objects.filter(phone_model_name__exact=data)
-        pf = phone_feature.objects.filter(phone_brand_id__phone_modell__phone_model_name__exact=data,
-                                          phone_feature_name__exact="Price")
-        pfv = phone_feature_v.objects.filter(phone_brand_id__phone_modell__phone_model_name__exact=data,
-                                             phone_feature_id=11)
-        ap = {
-            'p_m': pm,
-            'p_f': pf,
-            'p_fv': pfv,
-        }
-        return render(request, 'phonePayment.html', ap)
+def amazonphone(request):
+    data = request.POST.get('buy13')
+    asinphone = phone_feature_v.objects.get(phone_model_id__phone_model_name__exact=data,
+                                            phone_feature_id=12)
+    asinphone = asinphone.phone_feature_v_value
+    params = {
+        'api_key': '70AA895846864706B3A8CF9A285C7C68',
+        'type': 'product',
+        'amazon_domain': 'amazon.com',
+        'asin': asinphone,
+        'output': 'html'
+    }
+    api_result = requests.get('https://api.rainforestapi.com/request', params)
+    return HttpResponse(api_result.content)
 
 
-def shipment(request):
+def amazontab(request):
+    data = request.POST.get('buy14')
+    asintab = tab_feature_v.objects.get(tab_model_id__tab_model_name__exact=data,
+                                        tab_feature_id=12)
+    asintab = asintab.tab_feature_v_value
+    params = {
+        'api_key': '70AA895846864706B3A8CF9A285C7C68',
+        'type': 'product',
+        'amazon_domain': 'amazon.com',
+        'asin': asintab,
+        'output': 'html'
+    }
+    api_result = requests.get('https://api.rainforestapi.com/request', params)
+    return HttpResponse(api_result.content)
 
-    return render(request, 'shipment.html')
 
-
-def thankyou(request):
-
-    return render(request, 'thankyou.html')
+def amazonwatch(request):
+    data = request.POST.get('buy15')
+    asinwatch = watch_feature_v.objects.get(watch_model_id__watch_model_name__exact=data,
+                                            watch_feature_id=12)
+    asinwatch = asinwatch.watch_feature_v_value
+    params = {
+        'api_key': '70AA895846864706B3A8CF9A285C7C68',
+        'type': 'product',
+        'amazon_domain': 'amazon.com',
+        'asin': asinwatch,
+        'output': 'html'
+    }
+    api_result = requests.get('https://api.rainforestapi.com/request', params)
+    return HttpResponse(api_result.content)
